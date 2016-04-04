@@ -4,4 +4,6 @@ var app = require('./server/server.js');
 
 app.listen(port);
 
+app.get('/')
+
 console.log('Server now listening on port ' + port);
