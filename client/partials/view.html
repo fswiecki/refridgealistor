@@ -1,3 +1,9 @@
 <div>
-  <h2>View my fridge</h2>
+  <h2>My fridge</h2>
+  <ul>
+    <li ng-repeat="item in fridgeContents">
+      {{item.name}}
+    </li>
+  </ul>
+  <!-- <pre>{{fridgeContents}}</pre> -->
 </div>

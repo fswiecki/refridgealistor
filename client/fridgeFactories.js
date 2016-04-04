@@ -8,11 +8,11 @@ angular.module('app.fridgeFactories', [])
     var ff = {};
 
     //TODO: make this fridge a database
-    var myFridge = [];
+    ff.myFridge = [];
 
     ff.add = function (food) { 
       console.log('Adding ' + food.foodName + ' to the fridge!');
-      myFridge.push(food);
+      this.myFridge.push(food);
     };
 
     return ff;
