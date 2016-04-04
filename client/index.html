@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Refridge-a-List-or</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+  <!-- <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script> -->
   <script src="./app.js"></script>
+  <script src="./uiRoute.js"></script>
+  <script src="./fridgeAdd.js"></script>
+  <script src="./fridgeView.js"></script>
+  <script src="./fridgeFactories.js"></script>
 </head>
-<body ng-controller="foodController">
-<h1>REFRIDGE-A-LIST-OR</h1>
+<body ng-app="app">
+  <h1>REFRIDGE-A-LIST-OR</h1>
   <p>Your solution to "How long <i>has</i> that been in there??"
-  <form ng-submit="addToFridge()">
-    Food:
-    <input type="text" ng-model="addFood.name"> <br />
-    Category: 
-    <select name="category" ng-model="addFood.category" >
-      <option ng-repeat="(k, v) in expiry">{{k}}</option>
-    </select><br />
-    Date fridged:
-    <input type="date" ng-model="addFood.startDate"> <br />
-    <button>Add to my fridge!</button>
-  </form>
-  <br />
-  <h3>Food preview!</h3>
-  <b>Food: </b>{{addFood.name}} <br>
-  <b>Category: </b>{{addFood.category}} <br>
-  <b>Date fridged: </b>{{addFood.startDate}} <br>
+  <ul>
+    <li><a ui-sref="add">Add to my fridge</a></li>
+    <li><a ui-sref="view">View my fridge</a></li>
+  </ul>
+  <div ui-view></div>
 </body>
 </html>
