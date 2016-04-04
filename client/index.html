@@ -11,19 +11,19 @@
   <p>Your solution to "How long <i>has</i> that been in there??"
   <form ng-submit="addToFridge()">
     Food:
-    <input type="text" ng-model="food.name"> <br />
+    <input type="text" ng-model="addFood.name"> <br />
     Category: 
-    <select name="category" ng-model="food.category" >
+    <select name="category" ng-model="addFood.category" >
       <option ng-repeat="(k, v) in expiry">{{k}}</option>
     </select><br />
     Date fridged:
-    <input type="date" ng-model="food.startDate"> <br />
+    <input type="date" ng-model="addFood.startDate"> <br />
     <button>Add to my fridge!</button>
   </form>
   <br />
   <h3>Food preview!</h3>
-  <b>Food: </b>{{food.name}} <br>
-  <b>Category: </b>{{food.category}} <br>
-  <b>Date fridged: </b>{{food.startDate}} <br>
+  <b>Food: </b>{{addFood.name}} <br>
+  <b>Category: </b>{{addFood.category}} <br>
+  <b>Date fridged: </b>{{addFood.startDate}} <br>
 </body>
 </html>
