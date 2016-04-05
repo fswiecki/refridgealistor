@@ -2,7 +2,7 @@
   <h2>My fridge</h2>
   <ul>
     <li ng-repeat="item in myFridge">
-      {{item.name}} good for {{item.daysLeft}} more day(s)
+      <span class="fridge{{item.daysLeft}} fridge">{{item.name}} good for {{item.daysLeft}} more day(s)</span>
     </li>
   </ul>
   <!-- <pre>{{myFridge}}</pre> -->

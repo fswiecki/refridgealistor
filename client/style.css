@@ -1,0 +1,19 @@
+/*
+COLOR CODE ALL THE FOODS
+*/
+
+.fridge {
+  color: darkgreen;
+}
+
+.fridge0, .fridge1 {
+  color: red;
+}
+
+.fridge2, .fridge3 {
+  color: orange;
+}
+
+.fridge4, .fridge5 {
+  color: green;
+}
