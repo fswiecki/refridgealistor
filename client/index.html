@@ -18,6 +18,8 @@
   <script src="./fridgeFactories.js"></script>
   <script src="./fridgeAdd.js"></script>
   <script src="./fridgeView.js"></script>
+  <script src="./signinCtrl.js"></script>
+  <script src="./signupCtrl.js"></script>
 </head>
 <body ng-app="app">
   <div class="page">
@@ -25,15 +27,7 @@
       <h1>REFRIDGE-A-LIST-OR</h1>
       <h4>Your solution to "How long <i>has</i> that been in there??"</h4>
     </div>
-    <div>
-      <div>
-        <ul class="navigation">
-          <li><a ui-sref="add">Add to my fridge</a></li>
-          <li><a ui-sref="view">View my fridge</a></li>
-        </ul>
-      </div>
-      <div ui-view></div>
-    </div>
+    <div ui-view></div>
   </div>
 </body>
 </html>

@@ -1,6 +1,5 @@
 angular.module('app.fridgeAdd', [])
   .controller('foodController', function ($scope, foodFactory) {
-    // $scope.food.startDate = new Date();
     $scope.expiry = {
       'raw meat': 3,
       'deli meat': 7,
@@ -34,7 +33,6 @@ angular.module('app.fridgeAdd', [])
       }
       var food = {
         foodName: $scope.addFood.name,
-        // dateAdded: moment($scope.addFood.startDate).format("DD MM YY"), //not actually used for anything?
         daysGood: daysGood,
         dateExpire: dateExpire
       };
@@ -49,11 +47,3 @@ angular.module('app.fridgeAdd', [])
       window.alert('Added ' + food.foodName + ' to your fridge!');
     };
   });
-
-
-  /*
-DATA FOR THE FOODS:
-foodName:
-dateAdded:
-daysGood:
-  */

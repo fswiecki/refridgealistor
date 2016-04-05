@@ -1,3 +1,7 @@
+<ul class="navigation">
+  <li><a ui-sref="add">Add to my fridge</a></li>
+  <li><a ui-sref="view">View my fridge</a></li>
+</ul>
 <div>
   <form ng-submit="addToFridge()">
     Food:  <input type="text" ng-model="addFood.name" required> 
@@ -15,8 +19,4 @@
     <br />
     <button>Add to my fridge!</button>
   </form>
-  <!--   <h3>Food preview! (temporary...)</h3>
-  <b>Food: </b>{{addFood.name}} <br>
-  <b>Category: </b>{{addFood.category}} <br>
-  <b>Date fridged: </b>{{addFood.startDate}} <br> -->
 </div>

@@ -1,0 +1,10 @@
+<div>
+  <h2>Create an account</h2>
+  <form ng-submit="makeUser()">
+    username: <input type="text" ng-model="user.username">
+    password: <input type="password" ng-model="user.password">
+    <button>sign up!</button>
+  </form>
+  <br>
+  Already have an account? <a ui-sref="login">log in</a>
+</div>

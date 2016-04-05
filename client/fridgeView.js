@@ -14,8 +14,8 @@ angular.module('app.fridgeView', [])
         foodView.name = food.foodName;
         foodView.expiry = food.dateExpire;
         foodView.daysLeft = foodView.expiry.diff(now, 'days');
-        //color coding classes
-        if (foodView.daysLeft < 0) {
+        //color coding classes//
+        if (foodView.daysLeft < 0) { 
           foodView.code = 'never';
         } else if (foodView.daysLeft < 2) {
           foodView.code = 'immediately';
@@ -46,9 +46,3 @@ angular.module('app.fridgeView', [])
     //fill 'er up
     $scope.fillFridge();
   });
-
-//some mock foods
-// [{name: 'steak', daysLeft: 2, code: 'immediately'},
-//   {name: 'lettuce', daysLeft: 4, code: 'soon'}, 
-//   {name: 'milk', daysLeft: 5, code: 'later'},
-//   {name: 'apples', daysLeft: 8, code: 'eventually'}]

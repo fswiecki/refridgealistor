@@ -9,8 +9,10 @@
   "author": "Frances Swiecki",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "express": "^4.13.4",
     "grunt": "^0.4.5",
+    "mongoose": "^4.4.11",
     "nodemon": "^1.9.1"
   }
 }
