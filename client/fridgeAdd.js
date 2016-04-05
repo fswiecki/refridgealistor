@@ -17,7 +17,8 @@ angular.module('app.fridgeAdd', [])
       var food = {
         foodName: $scope.addFood.name,
         daysGood: $scope.expiry[$scope.addFood.category],
-        dateAdded: $scope.addFood.startDate
+        dateAdded: moment($scope.addFood.startDate).format("DD MM YY"),
+        dateExpire: moment($scope.addFood.startDate).add($scope.expiry[$scope.addFood.category], 'd')
       };
       foodFactory.add(food);
       //clear form fields

@@ -20,10 +20,12 @@
 <body ng-app="app">
   <h1>REFRIDGE-A-LIST-OR</h1>
   <p>Your solution to "How long <i>has</i> that been in there??"
-  <ul>
-    <li><a ui-sref="add">Add to my fridge</a></li>
-    <li ng-click="fillFridge()"><a ui-sref="view">View my fridge</a></li>
-  </ul>
-  <div ui-view></div>
+  <div>
+    <ul>
+      <li><a ui-sref="add">Add to my fridge</a></li>
+      <li><a ui-sref="view">View my fridge</a></li>
+    </ul>
+    <div ui-view></div>
+  </div>
 </body>
 </html>

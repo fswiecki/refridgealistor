@@ -3,4 +3,4 @@ var app = angular.module('app', [
   'app.fridgeView',
   'app.fridgeAdd',
   'app.fridgeFactories'
-  ]);
+]);
