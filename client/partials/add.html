@@ -1,13 +1,18 @@
 <div>
   <form ng-submit="addToFridge()">
-    Food:
-    <input type="text" ng-model="addFood.name" required> <br />
+    Food:  <input type="text" ng-model="addFood.name" required> 
+    <br />
     Category: 
     <select name="category" ng-model="addFood.category" required>
       <option ng-repeat="(k, v) in expiry">{{k}}</option>
-    </select><br />
-    Date fridged:
-    <input type="date" ng-model="addFood.startDate" required> <br />
+    </select>
+    <span ng-if="isCustom(addFood.category)"> 
+      expiration date: 
+      <input type="date"  ng-model="addFood.custom" required>
+    </span>
+    <br />
+    Date fridged: <input type="date" ng-model="addFood.startDate" required> 
+    <br />
     <button>Add to my fridge!</button>
   </form>
   <!--   <h3>Food preview! (temporary...)</h3>

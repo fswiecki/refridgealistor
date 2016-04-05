@@ -1,9 +1,6 @@
 angular.module('app.fridgeView', [])
   .controller('fridgeController', function ($scope, foodFactory, fridgeFactory) {
-    $scope.myFridge = [{name: 'steak', daysLeft: 2, picked: false, code: 'immediately'},
-  {name: 'lettuce', daysLeft: 4, picked: false,  code: 'soon'}, 
-  {name: 'milk', daysLeft: 5, picked: false, code: 'later'},
-  {name: 'apples', daysLeft: 8, picked: false, code: 'eventually'}];
+    $scope.myFridge = [];
 
     $scope.picked = {};
 
