@@ -3,7 +3,7 @@ SOME BASIC PAGE LAYOUTS
 */
 
 body {
-  background-color: #CCC;
+
 }
 
 .page {
@@ -48,41 +48,49 @@ FORM INPUT
 */
 
 form {
-  font-weight: bold;
-  margin: 30px auto;
-  width: 60%;
+
 }
 
 input, select {
-  margin: 5px auto;
-  width: 100%;
-  border-radius: 3px;
+
 }
 
 button {
-  margin: 20px auto;
-  width: 100%;
-  font-size: 13px;
-  padding: 8px;
-  border-radius: 5px;
+
 }
 
 /*
 COLOR CODE ALL THE FOODS
 */
-
-.fridge {
-  color: darkgreen;
+.fridge li {
+  list-style-type: none;
 }
 
-.fridge0, .fridge1 {
+.never {
+  color: black;
+  text-decoration: line-through;
+}
+
+.immediately {
   color: red;
 }
 
-.fridge2, .fridge3 {
+.soon {
   color: orange;
 }
 
-.fridge4, .fridge5 {
+.later {
   color: green;
+}
+
+.eventually {
+  color: darkgreen;
+}
+
+.picked-true {
+  margin-left: 10px;
+}
+
+.picked-true:before {
+  content:"> ";
 }

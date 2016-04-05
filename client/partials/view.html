@@ -1,9 +1,15 @@
 <div>
   <h2>My fridge</h2>
-  <ul>
-    <li ng-repeat="item in myFridge">
-      <span class="fridge{{item.daysLeft}} fridge">{{item.name}} good for {{item.daysLeft}} more day(s)</span>
+  <button ng-click="sortType = 'daysLeft'">sort by age</button>
+  <button ng-click="sortType = 'name'">sort by name</button>
+  <ul class="fridge">
+<!--     <li ng-repeat="item in myFridge | orderBy:sortType">
+      <span class="{{item.code}}"><b>{{item.name}}</b> good for {{item.daysLeft}} more day(s)</span>
+    </li> -->
+    <li ng-repeat="item in myFridge | orderBy:sortType" class="picked-{{item.picked}}" ng-click="select(item, item.picked, item.name)">
+      <b>{{item.name}}</b> <span class="{{item.code}}">good for {{item.daysLeft}} more day(s)</span>
     </li>
   </ul>
+  <button ng-click="remove()">delete selected</button>
   <!-- <pre>{{myFridge}}</pre> -->
 </div>
