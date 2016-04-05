@@ -21,7 +21,15 @@ angular.module('app.fridgeFactories', [])
     };
 
     ff.remove = function(foodList) {
-      //TODO: this needs to happen with a database
+      for(food in foodList) {
+        ff.myFridge.forEach(function(item, index){
+          if (item.foodName === food) {
+            ff.myFridge.splice(index, 1);
+            delete(foodList[food]);
+            console.log(foodList);
+          }
+        });
+      }
     };
 
     return ff;
@@ -36,7 +44,11 @@ angular.module('app.fridgeFactories', [])
     };
 
     signin = function (user) {
-      console.log('sign in!');
+      $http({
+        method: 'POST',
+        url: '/login',
+        data: JSON.stringify(user)
+      });
     };
 
     return {

@@ -5,6 +5,7 @@ angular.module('app.fridgeView', [])
     $scope.picked = {};
 
     $scope.fillFridge = function () {
+      $scope.myFridge = [];
       var fridgeData = foodFactory.myFridge;
       fridgeData.forEach(function (food) {
         var foodView = {};
@@ -36,10 +37,12 @@ angular.module('app.fridgeView', [])
         delete $scope.picked[name];
       }
       item.picked = !picked;
+      console.log($scope.picked)
     };
 
     $scope.remove = function () {
-      console.log('get rid of this thing');
+      foodFactory.remove($scope.picked);
+      $scope.fillFridge();
     };
 
     //fill 'er up
