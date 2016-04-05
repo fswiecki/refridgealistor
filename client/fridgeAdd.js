@@ -43,7 +43,6 @@ angular.module('app.fridgeAdd', [])
       $scope.addFood.startDate = '';
       //send success message
       //TODO:  make this less gross
-      console.log(food);
       window.alert('Added ' + food.foodName + ' to your fridge!');
     };
   });

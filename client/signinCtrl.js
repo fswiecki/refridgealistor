@@ -1,6 +1,11 @@
 angular.module('app.logIn', [])
-  .controller('loginController', function ($scope) {
+  .controller('loginController', function ($scope, userFactory) {
+    $scope.user = {};
     $scope.signIn = function() {
-      console.log('TODO: write sign in');
+      var userObj = {
+        username: $scope.user.username,
+        password: $scope.user.password
+      };
+      userFactory.signin(userObj);
     };
   });

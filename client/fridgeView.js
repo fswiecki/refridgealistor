@@ -5,7 +5,6 @@ angular.module('app.fridgeView', [])
     $scope.picked = {};
 
     $scope.fillFridge = function () {
-      console.log('Filling your fridge...');
       var fridgeData = foodFactory.myFridge;
       fridgeData.forEach(function (food) {
         var foodView = {};

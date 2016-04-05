@@ -17,7 +17,6 @@ angular.module('app.fridgeFactories', [])
                    {foodName:"milk",daysGood:6,dateExpire:moment("2016-04-10T04:00:00.000Z")}];
 
     ff.add = function (food) { 
-      console.log('Adding ' + food.foodName + ' to the fridge!');
       this.myFridge.push(food);
     };
 
@@ -27,17 +26,21 @@ angular.module('app.fridgeFactories', [])
 
     return ff;
   })
-  .factory('userFactory', function (user, $http) {
-    signup = function () {
-
+  .factory('userFactory', function ($http) {
+    signup = function (user) {
+      $http({
+        method: 'POST',
+        url: '/signup',
+        data: JSON.stringify(user)
+      });
     };
 
-    login = function () {
-
+    signin = function (user) {
+      console.log('sign in!');
     };
 
     return {
       signup: signup,
-      login: login
+      signin: signin
     };
   });
