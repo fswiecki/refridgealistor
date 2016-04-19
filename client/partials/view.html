@@ -1,15 +1,32 @@
-<ul class="navigation">
-  <li><a ui-sref="add">Add to my fridge</a></li>
-  <li><a ui-sref="view">View my fridge</a></li>
-</ul>
-<div>
-  <h2>My fridge</h2>
-  <button ng-click="sortType = 'daysLeft'">sort by age</button>
-  <button ng-click="sortType = 'name'">sort by name</button>
-  <ul class="fridge">
-    <li ng-repeat="item in myFridge | orderBy:sortType" class="picked-{{item.picked}}" ng-click="select(item, item.picked, item.name)">
-      <b>{{item.name}}</b> <span class="{{item.code}}">good for {{item.daysLeft}} more day(s)</span>
-    </li>
+<div class="col-md-12">
+<nav class="navbar navbar-default">
+  <ul class="nav navbar-nav">
+    <li><a ui-sref="add">Add to my fridge</a></li>
+    <li><a ui-sref="view">View my fridge</a></li>
   </ul>
-  <button ng-click="remove()">delete selected</button>
+</nav>
+</div>
+<div class="col-md-4 col-md-offset-4">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h2>My fridge</h2></div>
+    <div class="panel-body">
+    <div class="btn-group btn-group-justified">
+    <div class="btn-group">
+      <button class="btn btn-default" ng-click="sortType = 'daysLeft'">sort by age</button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-default" ng-click="sortType = 'name'">sort by name</button>
+    </div>  
+    </div>
+      <br>
+    <div class="fridge">
+    <table class="table">
+      <tr ng-repeat="item in myFridge | orderBy:sortType" class="bg-{{item.code}}" ng-click="select(item, item.picked, item.name)">
+        <td><span class="glyphicon glyphicon-chevron-right" ng-if="item.picked"></span><span class="glyphicon glyphicon-chevron-left text-muted" ng-if="!item.picked"></span></td><td>{{item.name}}</td><td> good for {{item.daysLeft}} more day(s)</td>
+      </tr>
+      </table>
+    </div>
+    <button class="btn btn-default btn-lg btn-block" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> delete selected</button>
+  </div>
+  </div>
 </div>

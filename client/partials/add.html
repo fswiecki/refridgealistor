@@ -1,22 +1,32 @@
-<ul class="navigation">
-  <li><a ui-sref="add">Add to my fridge</a></li>
-  <li><a ui-sref="view">View my fridge</a></li>
-</ul>
-<div>
+<div class="col-md-12">
+<nav class="navbar navbar-default">
+  <ul class="nav navbar-nav">
+    <li><a ui-sref="add">Add to my fridge</a></li>
+    <li><a ui-sref="view">View my fridge</a></li>
+  </ul>
+</nav>
+</div>
+<div class="col-md-4 col-md-offset-4">
   <form ng-submit="addToFridge()">
-    Food:  <input type="text" ng-model="addFood.name" required> 
+    <div class="form-group">
+      <label>Food:</label>
+      <input type="text" class="form-control" ng-model="addFood.name" required> 
+    </div>
+    <div class="form-group"> 
+      <label>Category:</label>
+      <select name="category" class="form-control" ng-model="addFood.category" required>
+        <option ng-repeat="(k, v) in expiry">{{k}}</option>
+      </select>
+      <span ng-if="isCustom(addFood.category)"> 
+        expiration date: 
+        <input type="date" class="form-control"  ng-model="addFood.custom" required>
+      </span>
+    </div>
+
     <br />
-    Category: 
-    <select name="category" ng-model="addFood.category" required>
-      <option ng-repeat="(k, v) in expiry">{{k}}</option>
-    </select>
-    <span ng-if="isCustom(addFood.category)"> 
-      expiration date: 
-      <input type="date"  ng-model="addFood.custom" required>
-    </span>
+    <label>Date fridged: </label>
+    <input type="date" class="form-control has-error" ng-model="addFood.startDate" required> 
     <br />
-    Date fridged: <input type="date" ng-model="addFood.startDate" required> 
-    <br />
-    <button>Add to my fridge!</button>
+    <button class="btn btn-primary btn-block">Add to my fridge!</button>
   </form>
 </div>

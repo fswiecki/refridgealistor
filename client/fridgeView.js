@@ -1,5 +1,5 @@
 angular.module('app.fridgeView', [])
-  .controller('fridgeController', function ($scope, foodFactory, fridgeFactory) {
+  .controller('fridgeController', function ($scope, foodFactory) {
     $scope.myFridge = [];
 
     $scope.picked = {};
@@ -16,15 +16,15 @@ angular.module('app.fridgeView', [])
         foodView.daysLeft = foodView.expiry.diff(now, 'days');
         //color coding classes//
         if (foodView.daysLeft < 0) { 
-          foodView.code = 'never';
+          foodView.code = 'primary';
         } else if (foodView.daysLeft < 2) {
-          foodView.code = 'immediately';
+          foodView.code = 'danger';
         } else if (foodView.daysLeft < 4) { 
-          foodView.code = 'soon';
+          foodView.code = 'warning';
         } else if (foodView.daysLeft < 6) {
-          foodView.code = 'later';
+          foodView.code = 'success';
         } else {
-          foodView.code = 'eventually';
+          foodView.code = 'info';
         }
         $scope.myFridge.push(foodView);
       });
@@ -37,7 +37,6 @@ angular.module('app.fridgeView', [])
         delete $scope.picked[name];
       }
       item.picked = !picked;
-      console.log($scope.picked)
     };
 
     $scope.remove = function () {
